@@ -1,0 +1,160 @@
+:root {
+    --blue-900: hsl(223, 47%, 23%);
+    --blue-600: hsl(245, 75%, 52%);
+    --blue-200: hsl(225, 100%, 94%);
+    --blue-100: hsl(225, 100%, 98%);
+    
+    --blue-grayish: hsl(224, 23%, 55%);
+
+    --white: #ffffff;
+    
+    --font-family: Red Hat Display, "helvetica", "sans-serif";
+
+    --font-size: 1rem
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: var(--font-family);
+}
+
+body {
+    background: url('./images/pattern-background-desktop.svg') repeat-x;
+    background-color: var(--blue-200)
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 50px);
+}
+
+a {
+    color: var(--blue-600);
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--blue-900);
+}
+
+.container {
+    width: 450px;
+    background-color: var(--white);
+    border-radius: 1rem;
+    box-shadow: 0rem 2rem 2rem var(--blue-grayish);
+}
+
+.container img {
+    border-radius: 1rem 1rem 0 0;
+}
+
+.container a {
+    color: var(--blue-grayish);
+    transition: color 0.2s;
+}
+
+.container a:hover {
+    color: var(--blue-900);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    text-align: center;
+    padding: 3rem;
+}
+
+.content h1 {
+    color: var(--blue-900);
+    font-weight: 900;
+}
+
+.content p {
+    line-height: 2ch;
+    color: var(--blue-grayish);
+    margin-bottom: 0.5rem;
+}
+
+.data {
+    width: 100%;
+    padding: 2rem;
+    border-radius: 1rem;
+
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: var(--blue-100)
+}
+
+.data a {
+    color: var(--blue-900)
+}
+
+.data a:hover{
+    color: var(--blue-600);
+}
+
+.plan {
+    display: flex;
+    gap: 1rem;
+}
+
+.plan h2{
+    color: var(--blue-900);
+    font-size: var(--font-size);
+}
+
+.plan span {
+    color: var(--blue-grayish);
+}
+
+.plan div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+button {
+    border: 0;
+    background-color: var(--blue-600);
+    color: var(--blue-100);
+    width: 100%;
+    padding: 1rem;
+    
+    border-radius: 1rem;
+    font-size: var(--font-size);
+    font-weight: 600;
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    box-shadow: 0rem 1rem 1rem var(--blue-200);
+
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: rgb(118	108	241)
+}
+
+footer {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer a {
+    margin-left: 0.3rem;
+}
