@@ -1,0 +1,26 @@
+main {
+
+    display: flex;
+    justify-content: center;
+
+
+    div.cardsGrid {
+        display: grid;
+
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 75px;
+        row-gap: 75px;
+
+        div {
+            grid-column: 1 / -1;
+    
+            display: flex;
+            justify-content: space-between;
+
+            left: 0;
+            right: 0;
+
+            margin-top: 2rem;
+        }
+    }
+}

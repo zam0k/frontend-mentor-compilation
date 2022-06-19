@@ -1,0 +1,36 @@
+.container {
+    background-color: var(--dark-mode-elements);
+    width: 265px;
+
+    color: var(--dark-mode-text);
+
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 0.3rem;
+
+    box-shadow: 0 0.3rem 1rem var(--light-mode-background);
+
+    span {
+        font-weight: 600;
+    }
+
+    img {
+        max-width: 100%;
+        object-fit: contain;
+        border-radius: 0.3rem 0.3rem 0 0;
+    }
+
+}
+
+.countryData {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    padding: 1.5rem;
+
+    ul:last-child{
+        margin-bottom: 1rem;
+    }
+}
