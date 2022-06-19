@@ -9,7 +9,7 @@ export function Main() {
   return (
     <main className={styles.main}>
         <div className={styles.cardsGrid}>
-            <div>
+            <div className={styles.header}>
                 <SearchBar/>
                 <DropBox/>
             </div>

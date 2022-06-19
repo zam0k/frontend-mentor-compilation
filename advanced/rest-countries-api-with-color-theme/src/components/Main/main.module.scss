@@ -3,24 +3,27 @@ main {
     display: flex;
     justify-content: center;
 
-
-    div.cardsGrid {
+    .cardsGrid {
         display: grid;
 
         grid-template-columns: repeat(4, 1fr);
         column-gap: 75px;
         row-gap: 75px;
+    }
 
-        div {
-            grid-column: 1 / -1;
-    
-            display: flex;
-            justify-content: space-between;
+    .header {
+        grid-column: 1 / -1;
 
-            left: 0;
-            right: 0;
+        display: flex;
+        justify-content: space-between;
 
-            margin-top: 2rem;
-        }
+        align-items: center;
+
+        height: 3rem;
+
+        left: 0;
+        right: 0;
+
+        margin-top: 2rem;
     }
 }
