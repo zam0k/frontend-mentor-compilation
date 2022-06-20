@@ -1,16 +1,22 @@
 import React from 'react'
+import { country } from '../Main/Main';
 
 import styles from './card.module.scss';
-export function Card() {
+
+
+export function Card({name, flags, population, region, capital}: country) {
+
   return (
     <section className={styles.container}>
-        <img src={require("./licensed-image.jpg")}/>
+        <div className={styles.imageContainer}>
+          <img src={flags.png} alt={name.common}/>
+        </div>
         <div className={styles.countryData}>
-            <h2>Germany</h2>
+            <h2>{name.common}</h2>
             <ul>
-                <li><span>Population:</span> 811111111</li>
-                <li><span>Region:</span> Europe</li>
-                <li><span>Capital:</span> Berlin</li>
+                <li><span>Population:</span> {population}</li>
+                <li><span>Region:</span> {region}</li>
+                <li><span>Capital:</span> {capital}</li>
             </ul>
         </div>
     </section>
