@@ -9,9 +9,10 @@ type propTypes = {
   setCountries: any
   setError: any
   error: any
+  setLoading: any
 }
 
-export function SearchBar({setCountries, setError, error}: propTypes) {
+export function SearchBar({setCountries, setError, error, setLoading}: propTypes) {
 
   const [searchData, setSearchData] = React.useState<string>('');
 
@@ -19,18 +20,23 @@ export function SearchBar({setCountries, setError, error}: propTypes) {
     event.preventDefault();
 
     if(!searchData){
+      setLoading(true);
       const response = await api.get('all');
       setCountries(response.data);
+      setLoading(false);
       return;
     }
 
     try {
+      setLoading(true)
       const response = await api.get(`name/${searchData}`);
       setCountries(response.data);
       setSearchData('');
       setError('');
     } catch (error) {
       setError('country cannot be found');
+    } finally {
+      setLoading(false);
     }
 
   }

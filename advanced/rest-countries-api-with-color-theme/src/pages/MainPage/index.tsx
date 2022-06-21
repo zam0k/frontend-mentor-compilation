@@ -5,6 +5,8 @@ import { SearchBar } from '../../components/SearchBar';
 import styles from './styles.module.scss';
 import { DropBox } from '../../components/DropBox';
 import { api } from '../../services/api';
+import Loading from '../../components/Loading';
+import CardList from '../../components/CardList';
 
 
 export interface Country {
@@ -22,24 +24,27 @@ export interface Country {
 export function MainPage() {
   const [countries, setCountries] = React.useState<Country[]>([]);
   const [error, setError] = React.useState('');
- 
+  const [loading, setLoading] = React.useState(false);
+
+
   React.useEffect(() => {
-    async function fetchCountries() {
-      const response = await api.get('all');
+
+    async function getCountries() {
+      const response = await api.get('/all');
       setCountries(response.data);
     }
+    getCountries();
+  }, []);
 
-    fetchCountries();
-  }, [])
-
+ 
   return (
     <main className={styles.main}>
+        <div className={styles.header}>
+          <SearchBar setCountries={setCountries} setError={setError} error={error} setLoading={setLoading}/>
+          <DropBox setCountries={setCountries} setLoading={setLoading}/>
+        </div>
         <div className={styles.cardsGrid}>
-            <div className={styles.header}>
-                <SearchBar setCountries={setCountries} setError={setError} error={error}/>
-                <DropBox setCountries={setCountries}/>
-            </div>
-            {countries.map((el: Country, index )=> <Card key={index} name={el.name} capital={el.capital} region={el.region} population={el.population} flags={el.flags}/>)}
+            <CardList countries={countries} loading={loading}/>
         </div>
     </main>
   )
