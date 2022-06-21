@@ -36,7 +36,7 @@ export function MainPage() {
     <main className={styles.main}>
         <div className={styles.cardsGrid}>
             <div className={styles.header}>
-                <SearchBar setCountries={setCountries} setError={setError}/>
+                <SearchBar setCountries={setCountries} setError={setError} error={error}/>
                 <DropBox setCountries={setCountries}/>
             </div>
             {countries.map((el: Country, index )=> <Card key={index} name={el.name} capital={el.capital} region={el.region} population={el.population} flags={el.flags}/>)}
