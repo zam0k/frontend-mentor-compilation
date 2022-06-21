@@ -1,17 +1,14 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 import './global.scss';
-import { Header } from './components/Header/Header';
-import { Main } from './components/Main/Main';
-import { Footer } from './components/Footer/Footer';
+import { PageRoutes } from './routes/PageRoutes';
 
 function App() {
   return (
-    <>
-      <Header/>
-      <Main/>
-      <Footer/>
-    </>
+    <BrowserRouter>
+        <PageRoutes/>
+    </BrowserRouter>
   );
 }
 

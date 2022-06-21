@@ -1,10 +1,9 @@
 import React from 'react'
-import { country } from '../Main/Main';
 
-import styles from './card.module.scss';
+import styles from './styles.module.scss';
 
 
-export function Card({name, flags, population, region, capital}: country) {
+export function Card({name, flags, population, region, capital}: any) {
 
   return (
     <section className={styles.container}>

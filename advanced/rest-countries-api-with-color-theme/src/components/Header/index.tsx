@@ -1,7 +1,7 @@
 import React from 'react'
 import { IoIosMoon } from "react-icons/io";
 
-import styles from './header.module.scss';
+import styles from './styles.module.scss';
 
 export function Header() {
   return (
